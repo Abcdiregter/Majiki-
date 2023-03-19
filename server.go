@@ -9122,7 +9122,7 @@ func main() {
 
 	u, err := url.Parse(site)
 	if err != nil {
-		fmt.Println("%int32%facebook.com/TranDucDuy.User%int32%facebook.com/TranDucDuy.User")
+		
 		os.Exit(1)
 	}
 
@@ -9141,7 +9141,7 @@ func main() {
 				headersUseragents = append(headersUseragents, a)
 			}
 		} else {
-			fmt.Printf("%int32%facebook.com/TranDucDuy.User%int32%facebook.com/TranDucDuy.User", agents)
+			
 			os.Exit(1)
 		}
 	}
@@ -9152,13 +9152,13 @@ func main() {
 		var (
 			err, sent int32
 		)
-		fmt.Println("%int32%facebook.com/TranDucDuy.User%int32%facebook.com/TranDucDuy.User")
+		
 		for {
 			if atomic.LoadInt32(&cur) < int32(maxproc-1) {
 				go httpcall(site, u.Host, data, headers, ss)
 			}
 			if sent%10 == 0 {
-				fmt.Printf("%int32%facebook.com/TranDucDuy.User%int32%facebook.com/TranDucDuy.User", cur, maxproc, sent, err)
+				
 			}
 			switch <-ss {
 			case callExitOnErr:
@@ -9171,7 +9171,7 @@ func main() {
 				sent++
 			case targetComplete:
 				sent++
-				fmt.Printf("%int32%facebook.com/TranDucDuy.User%int32%facebook.com/TranDucDuy.User", cur, maxproc, sent, err)
+				
 				fmt.Println("\r--Sus Attack Finished --       \n\n\r")
 				os.Exit(0)
 			}
@@ -9181,7 +9181,7 @@ func main() {
 	ctlc := make(chan os.Signal)
 	signal.Notify(ctlc, syscall.SIGINT, syscall.SIGKILL, syscall.SIGTERM)
 	<-ctlc
-	fmt.Println("%int32%facebook.com/TranDucDuy.User%int32%facebook.com/TranDucDuy.User")
+
 }
 
 func httpcall(url string, host string, data string, headers arrayFlags, s chan uint8) {
